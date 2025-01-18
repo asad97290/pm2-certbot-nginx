@@ -66,10 +66,10 @@ server {
 
 
 
-## view disk space
+## view ec2 disk space
 df -h
 
-## grow space
+## grow ec2 space
 
 - lsblk
 - sudo apt update
