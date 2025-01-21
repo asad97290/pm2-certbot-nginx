@@ -56,8 +56,9 @@ server {
 ## setup cronjob for certbot renewal 
 - sudo crontab -l
 - sudo crontab -e
-- 0 3 */50 * * certbot renew --quiet --post-hook "systemctl reload nginx"
-
+- 0 3 1,15 * * certbot renew --quiet --post-hook "systemctl reload nginx"
+- sudo systemctl status cron
+- sudo systemctl start cron
 ## fow renewal without cronjob 
 - sudo certbot renew --dry-run
 - sudo systemctl reload nginx
