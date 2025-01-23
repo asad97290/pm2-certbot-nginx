@@ -78,3 +78,9 @@ df -h
 - sudo growpart /dev/xvda 1
 - sudo resize2fs /dev/xvda1
 - sudo xfs_growfs /
+
+
+
+## docker commands
+
+- docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}"
