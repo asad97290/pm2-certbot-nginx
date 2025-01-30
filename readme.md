@@ -84,3 +84,19 @@ df -h
 ## docker commands
 
 - docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}"
+
+
+
+## postgres
+
+- su - postgres
+
+- psql
+- ALTER USER dbusername WITH PASSWORD 'dbuserpassword';
+- for exisiting: \q
+- exit
+- sudo systemctl restart postgresql
+
+https://docs.blockscout.com/setup/deployment/manual-deployment-guide/ubuntu-setup
+
+
