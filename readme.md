@@ -92,11 +92,24 @@ df -h
 - su - postgres
 
 - psql
-- ALTER USER dbusername WITH PASSWORD 'dbuserpassword';
+- DROP DATABASE blockscout;
 - for exisiting: \q
 - exit
 - sudo systemctl restart postgresql
 
+- This will list the process IDs (pid) of active connections.
+
+```javascript
+SELECT pid, usename, application_name, client_addr 
+FROM pg_stat_activity 
+WHERE datname = 'blockscout';
+```
+- Now, forcefully disconnect all sessions using:
+```javascript
+SELECT pg_terminate_backend(pid) 
+FROM pg_stat_activity 
+WHERE datname = 'blockscout';
+```
 https://docs.blockscout.com/setup/deployment/manual-deployment-guide/ubuntu-setup
 
 
